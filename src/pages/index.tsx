@@ -3,12 +3,15 @@ import Layout from "../components/Layout";
 import Section from "../components/Section";
 import ParticlesBackground from "../components/ParticlesBackground";
 import TechScroll from "../components/TechScroll";
+import FaqAccordion from "../components/FaqAccordion";
+import ContactForm from "../components/ContactForm";
+import ServiceCard from "../components/ServiceCard";
 
 export default function Home() {
   return (
     <Layout>
       {/* 1. Hero Section - Premier impact visuel */}
-      <div className="relative min-h-screen flex items-center bg-background-dark">
+      <Section id="hero" title="" variant="dark" className="min-h-screen flex items-center justify-center relative">
         <ParticlesBackground />
         <div className="container mx-auto px-4 relative z-20">
           <div className="max-w-4xl mx-auto text-center">
@@ -31,10 +34,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </Section>
 
       {/* 2. About Section - Présentation de l'entreprise */}
-      <Section id="about" title="À Propos" className="relative">
+      <Section id="about" title="À Propos" variant="light" className="relative">
         <ParticlesBackground />
         <div className="relative z-20 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -91,50 +94,90 @@ export default function Home() {
       </Section>
 
       {/* 3. Services Section - Ce que nous proposons */}
-      <Section id="services" title="Nos Services" className="relative">
-        <div className="absolute inset-0 bg-background-light shadow-lg"></div>
-        <div className="relative z-10 container mx-auto px-4">
+      <Section id="services" title="Nos Services" variant="dark" className="relative">
+        <ParticlesBackground />
+        <div className="relative z-20 container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Sites Web",
-                description: "Des sites web aussi accueillants que les Toulousains",
-                icon: "🌐",
-                features: ["Design responsive", "Optimisation SEO", "Support local"]
-              },
-              {
-                title: "Applications Mobile",
-                description: "Des apps qui décollent comme un Airbus",
-                icon: "📱",
-                features: ["iOS & Android", "Design intuitif", "Performance optimale"]
-              },
-              {
-                title: "Conseil & Support",
-                description: "Un accompagnement à la toulousaine",
-                icon: "💡",
-                features: ["Proximité", "Réactivité", "Convivialité"]
-              }
-            ].map((service, index) => (
-              <div key={index} className="bg-background-light p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-2 text-text-primary">{service.title}</h3>
-                <p className="text-text-secondary mb-4">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-text-secondary">
-                      <span className="text-pink mr-2">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <ServiceCard
+              title="Sites Web"
+              description="Des sites web aussi accueillants que les Toulousains"
+              icon="🌐"
+              price="À partir de 999€"
+              features={[
+                {
+                  name: "Design Personnalisé",
+                  description: "Une identité visuelle unique qui reflète votre marque"
+                },
+                {
+                  name: "Responsive Design",
+                  description: "Parfaitement adapté à tous les appareils"
+                },
+                {
+                  name: "Optimisation SEO",
+                  description: "Visibilité maximale sur les moteurs de recherche"
+                },
+                {
+                  name: "Performance",
+                  description: "Chargement rapide et expérience fluide"
+                }
+              ]}
+              accent
+            />
+
+            <ServiceCard
+              title="Applications Mobile"
+              description="Des apps qui décollent comme un Airbus"
+              icon="📱"
+              price="À partir de 4999€"
+              features={[
+                {
+                  name: "iOS & Android",
+                  description: "Applications natives pour toutes les plateformes"
+                },
+                {
+                  name: "UX/UI Design",
+                  description: "Interfaces intuitives et ergonomiques"
+                },
+                {
+                  name: "Publication Stores",
+                  description: "Gestion complète de la mise en ligne"
+                },
+                {
+                  name: "Support 6 mois",
+                  description: "Maintenance et mises à jour incluses"
+                }
+              ]}
+            />
+
+            <ServiceCard
+              title="Conseil & Support"
+              description="Un accompagnement à la toulousaine"
+              icon="💡"
+              features={[
+                {
+                  name: "Audit Technique",
+                  description: "Analyse approfondie de vos besoins"
+                },
+                {
+                  name: "Formation",
+                  description: "Accompagnement personnalisé de vos équipes"
+                },
+                {
+                  name: "Maintenance",
+                  description: "Support technique et mises à jour régulières"
+                },
+                {
+                  name: "Évolution",
+                  description: "Amélioration continue de vos solutions"
+                }
+              ]}
+            />
           </div>
         </div>
       </Section>
 
       {/* 4. Technologies Section - Nos outils */}
-      <Section id="technologies" title="Technologies Utilisées" className="relative">
+      <Section id="technologies" title="Technologies Utilisées" variant="light" className="relative">
         <ParticlesBackground />
         <div className="relative z-20">
           <TechScroll />
@@ -142,7 +185,7 @@ export default function Home() {
       </Section>
 
       {/* 5. Pricing Section - Tarifs clairs */}
-      <Section id="pricing" title="Nos Tarifs" className="relative">
+      <Section id="pricing" title="Nos Tarifs" variant="dark" className="relative">
         <div className="absolute inset-0 bg-background-light shadow-lg"></div>
         <div className="relative z-10 container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
@@ -216,7 +259,7 @@ export default function Home() {
       </Section>
 
       {/* 6. Testimonials - Preuves sociales */}
-      <Section id="testimonials" title="Ce que nos clients disent" className="relative">
+      <Section id="testimonials" title="Ce que nos clients disent" variant="light" className="relative">
         <ParticlesBackground />
         <div className="relative z-20 container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -263,90 +306,72 @@ export default function Home() {
       </Section>
 
       {/* 7. FAQ Section - Réponses aux questions */}
-      <Section id="faq" title="Questions Fréquentes" className="relative">
-        <div className="absolute inset-0 bg-background-accent shadow-lg"></div>
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-3xl mx-auto space-y-6">
-            {[
+      <Section id="faq" title="Questions Fréquentes" variant="dark" className="relative">
+        <ParticlesBackground />
+        <div className="relative z-20 container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <FaqAccordion items={[
               {
                 question: "Combien coûte un site web ?",
-                answer: "Le coût dépend de vos besoins spécifiques. Nos sites vitrines commencent à 999€, et les solutions e-commerce à partir de 2499€. Contactez-nous pour un devis personnalisé !"
+                answer: "Le coût dépend de vos besoins spécifiques. Nos sites vitrines commencent à 999€, et les solutions e-commerce à partir de 2499€. Chaque projet est unique, et nous établissons un devis détaillé après avoir bien compris vos objectifs et vos exigences. Nous nous engageons à être transparents sur les coûts dès le début du projet."
               },
               {
                 question: "Quel est le délai de réalisation ?",
-                answer: "En général, un site vitrine prend 2-3 semaines, un e-commerce 4-6 semaines, et une application mobile 8-12 semaines. Ces délais peuvent varier selon la complexité du projet."
+                answer: "Les délais varient selon la complexité du projet : un site vitrine prend généralement 2-3 semaines, un e-commerce 4-6 semaines, et une application mobile 8-12 semaines. Nous établissons ensemble un planning détaillé au début du projet et vous tenons informé de l'avancement à chaque étape. Notre priorité est de livrer un produit de qualité dans les délais convenus."
               },
               {
                 question: "Proposez-vous un service de maintenance ?",
-                answer: "Oui ! Nous proposons différentes formules de maintenance pour garantir que votre site reste à jour, sécurisé et performant. Les tarifs commencent à 49€/mois."
+                answer: "Oui ! Nous proposons plusieurs formules de maintenance adaptées à vos besoins : mises à jour de sécurité, sauvegardes régulières, modifications de contenu, support technique... Nous sommes là pour assurer le bon fonctionnement de votre site sur le long terme. Nos contrats de maintenance sont flexibles et peuvent être ajustés selon vos besoins."
               },
               {
                 question: "Le site sera-t-il responsive ?",
-                answer: "Absolument ! Tous nos sites sont développés en responsive design et optimisés pour tous les appareils : ordinateurs, tablettes et smartphones."
+                answer: "Absolument ! Tous nos sites sont développés en responsive design et optimisés pour tous les appareils : ordinateurs, tablettes et smartphones. Nous testons rigoureusement chaque site sur différents appareils et navigateurs pour garantir une expérience utilisateur optimale. C'est un standard incontournable aujourd'hui et nous y accordons une attention particulière."
               },
               {
                 question: "Puis-je modifier mon site moi-même ?",
-                answer: "Oui ! Nous formons nos clients à l'utilisation de leur site et fournissons une interface d'administration simple et intuitive."
+                answer: "Oui ! Nous développons tous nos sites avec une interface d'administration intuitive et sur mesure. Nous vous formons à son utilisation et fournissons une documentation détaillée. Vous pourrez ainsi gérer votre contenu en toute autonomie : textes, images, produits, articles de blog... Et si vous avez besoin d'aide, nous restons disponibles pour vous accompagner."
+              },
+              {
+                question: "Comment se déroule un projet avec Tolarys ?",
+                answer: "Notre processus se déroule en plusieurs étapes : 1) Discussion initiale pour comprendre vos besoins, 2) Proposition détaillée et devis, 3) Conception et validation des maquettes, 4) Développement avec points réguliers, 5) Tests et ajustements, 6) Formation et mise en ligne. Nous privilégions une communication transparente tout au long du projet et vous impliquons dans les décisions importantes."
               }
-            ].map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-                <h3 className="text-lg font-semibold text-text-primary mb-2">{faq.question}</h3>
-                <p className="text-text-secondary">{faq.answer}</p>
-              </div>
-            ))}
+            ]} />
           </div>
         </div>
       </Section>
 
       {/* 8. Contact Section - Call to action final */}
-      <Section id="contact" title="Parlons de votre projet" className="relative">
-        <div className="absolute inset-0 bg-background-light shadow-lg"></div>
-        <div className="relative z-10 max-w-2xl mx-auto text-center">
-          <p className="text-xl mb-8 text-text-secondary">
-            Envie de discuter de votre projet autour d'un café place du Capitole ? 
-            Contactez-nous pour échanger !
-          </p>
-          <form className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
-                Nom
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="w-full px-4 py-3 rounded-lg border border-gray-light focus:outline-none focus:ring-2 focus:ring-pink text-text-primary"
-                placeholder="Votre nom"
-              />
+      <Section id="contact" title="Parlons de votre projet" variant="light" className="relative">
+        <ParticlesBackground />
+        <div className="relative z-20 container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <p className="text-xl text-text-light mb-6">
+                Envie de discuter de votre projet autour d'un café place du Capitole ? 
+                Contactez-nous pour échanger !
+              </p>
+              <div className="flex items-center justify-center space-x-6 mb-8">
+                <a 
+                  href="tel:+33600000000" 
+                  className="flex items-center text-text-light hover:text-pink transition-colors"
+                >
+                  <span className="text-2xl mr-2">📞</span>
+                  <span>06 79 33 68 12</span>
+                </a>
+                <a 
+                  href="mailto:contact@tolarys.fr" 
+                  className="flex items-center text-text-light hover:text-pink transition-colors"
+                >
+                  <span className="text-2xl mr-2">📧</span>
+                  <span>contact@tolarys-toulouse.fr</span>
+                </a>
+              </div>
             </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full px-4 py-3 rounded-lg border border-gray-light focus:outline-none focus:ring-2 focus:ring-pink text-text-primary"
-                placeholder="votre@email.com"
-              />
+            
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-xl">
+              <ContactForm />
             </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-text-primary mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={4}
-                className="w-full px-4 py-3 rounded-lg border border-gray-light focus:outline-none focus:ring-2 focus:ring-pink text-text-primary"
-                placeholder="Décrivez votre projet..."
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-pink text-text-light py-3 px-6 rounded-lg font-semibold hover:bg-pink-dark transition-all duration-300 transform hover:-translate-y-1"
-            >
-              Envoyer
-            </button>
-          </form>
+          </div>
         </div>
       </Section>
     </Layout>

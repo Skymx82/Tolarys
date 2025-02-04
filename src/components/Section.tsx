@@ -5,13 +5,18 @@ interface SectionProps {
   title: string;
   children: React.ReactNode;
   className?: string;
+  variant?: 'dark' | 'light';
 }
 
-const Section = ({ id, title, children, className = '' }: SectionProps) => {
+const Section = ({ id, title, children, className = '', variant = 'dark' }: SectionProps) => {
+  const bgColor = variant === 'dark' ? 'bg-background-dark' : 'bg-[#1a1a1a]';
+  
   return (
-    <section id={id} className={`py-16 ${className}`}>
+    <section id={id} className={`py-16 ${bgColor} ${className}`}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-dark">{title}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-text-light text-center">
+          {title}
+        </h2>
         {children}
       </div>
     </section>

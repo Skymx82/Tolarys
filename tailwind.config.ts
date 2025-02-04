@@ -1,18 +1,52 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
-export default {
+const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        pink: {
+          light: '#FF9ECD',
+          DEFAULT: '#FF1493',
+          dark: '#CC1077',
+        },
+        gray: {
+          light: '#F5F5F5',
+          DEFAULT: '#666666',
+          dark: '#333333',
+        },
+        text: {
+          primary: '#1A1A1A',
+          secondary: '#4A4A4A',
+          light: '#FFFFFF',
+        },
+        background: {
+          light: '#FFFFFF',
+          dark: '#1A1A1A',
+          accent: '#F8F9FA',
+        }
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        'scroll': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        }
+      },
+      animation: {
+        'fade-in': 'fade-in 1s ease-out',
+        'scroll': 'scroll 30s linear infinite',
       },
     },
   },
   plugins: [],
-} satisfies Config;
+}
+
+export default config

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import Section from '../../components/Section';
 import ParticlesBackground from '../../components/ParticlesBackground';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import ProjectForm from '../../components/ProjectForm';
 
 const WebPricing = () => {
+  const [showForm, setShowForm] = useState(false);
+  const [selectedPack, setSelectedPack] = useState<'web-vitrine' | 'web-business' | 'web-ecommerce' | null>(null);
+
   const features = {
     vitrine: [
       "Design responsive personnalisé",
@@ -30,6 +34,11 @@ const WebPricing = () => {
       "Panel d'administration",
       "Support technique (12 mois)"
     ]
+  };
+
+  const handleStartProject = (pack: 'web-vitrine' | 'web-business' | 'web-ecommerce') => {
+    setSelectedPack(pack);
+    setShowForm(true);
   };
 
   return (
@@ -62,7 +71,10 @@ const WebPricing = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full bg-pink text-white py-3 rounded-lg hover:bg-pink/90 transition-colors duration-300 font-semibold">
+                <button 
+                  onClick={() => handleStartProject('web-vitrine')}
+                  className="w-full bg-pink text-white py-3 rounded-lg hover:bg-pink/90 transition-colors duration-300 font-semibold"
+                >
                   Commencer
                 </button>
               </motion.div>
@@ -90,7 +102,10 @@ const WebPricing = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full bg-pink text-white py-3 rounded-lg hover:bg-pink/90 transition-colors duration-300 font-semibold">
+                <button 
+                  onClick={() => handleStartProject('web-business')}
+                  className="w-full bg-pink text-white py-3 rounded-lg hover:bg-pink/90 transition-colors duration-300 font-semibold"
+                >
                   Commencer
                 </button>
               </motion.div>
@@ -118,7 +133,10 @@ const WebPricing = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full bg-gradient-to-r from-pink to-purple-600 text-white py-3 rounded-lg hover:opacity-90 transition-colors duration-300 font-semibold">
+                <button 
+                  onClick={() => handleStartProject('web-ecommerce')}
+                  className="w-full bg-gradient-to-r from-pink to-purple-600 text-white py-3 rounded-lg hover:opacity-90 transition-colors duration-300 font-semibold"
+                >
                   Commencer
                 </button>
               </motion.div>
@@ -126,6 +144,18 @@ const WebPricing = () => {
           </Section>
         </div>
       </div>
+
+      <AnimatePresence>
+        {showForm && selectedPack && (
+          <ProjectForm
+            projectType={selectedPack}
+            onClose={() => {
+              setShowForm(false);
+              setSelectedPack(null);
+            }}
+          />
+        )}
+      </AnimatePresence>
     </Layout>
   );
 };

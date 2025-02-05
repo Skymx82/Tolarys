@@ -6,6 +6,7 @@ import TechScroll from "../components/TechScroll";
 import FaqAccordion from "../components/FaqAccordion";
 import ContactForm from "../components/ContactForm";
 import ServiceCard from "../components/ServiceCard";
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -296,19 +297,19 @@ export default function Home() {
                 name: "Marie L.",
                 role: "Fondatrice de La Petite Boutique",
                 text: "Tolarys a donné vie à ma boutique en ligne avec un design magnifique. Le site est rapide, facile à utiliser et mes clients l'adorent !",
-                image: "/images/testimonial1.jpg"
+                image: "/images/personne1.jpg"
               },
               {
                 name: "Thomas B.",
                 role: "CEO de TechStart",
                 text: "Une collaboration exceptionnelle ! L'équipe a parfaitement compris nos besoins et a livré une application mobile qui dépasse nos attentes.",
-                image: "/images/testimonial2.jpg"
+                image: "/images/personne2.jpg"
               },
               {
                 name: "Sophie M.",
                 role: "Architecte d'intérieur",
                 text: "Mon portfolio en ligne est exactement ce que je voulais. Professionnel, élégant et parfaitement responsive. Merci Tolarys !",
-                image: "/images/testimonial3.jpg"
+                image: "/images/personne3.jpg"
               }
             ].map((testimonial, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
@@ -378,24 +379,7 @@ export default function Home() {
                 Envie de discuter de votre projet autour d'un café place du Capitole ? 
                 Contactez-nous pour échanger !
               </p>
-              <div className="flex items-center justify-center space-x-6 mb-8">
-                <a 
-                  href="tel:+33600000000" 
-                  className="flex items-center text-text-light hover:text-pink transition-colors"
-                >
-                  <span className="text-2xl mr-2">📞</span>
-                  <span>06 79 33 68 12</span>
-                </a>
-                <a 
-                  href="mailto:contact@tolarys.fr" 
-                  className="flex items-center text-text-light hover:text-pink transition-colors"
-                >
-                  <span className="text-2xl mr-2">📧</span>
-                  <span>contact@tolarys-toulouse.fr</span>
-                </a>
-              </div>
             </div>
-            
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-xl">
               <ContactForm />
             </div>

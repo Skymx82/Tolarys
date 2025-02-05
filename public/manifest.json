@@ -1,0 +1,21 @@
+{
+  "name": "Tolarys - N°1 du Développement Web à Toulouse",
+  "short_name": "Tolarys",
+  "description": "Leader du développement web et mobile à Toulouse. Sites web premium et applications mobiles innovantes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#FF1493",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

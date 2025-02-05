@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import Section from '../../components/Section';
 import ParticlesBackground from '../../components/ParticlesBackground';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import ProjectForm from '../../components/ProjectForm';
 
 const MobilePricing = () => {
+  const [showForm, setShowForm] = useState(false);
+  const [selectedPack, setSelectedPack] = useState<'mobile-basic' | 'mobile-pro' | 'mobile-enterprise' | null>(null);
+
   const features = {
     basic: [
       "Application native (iOS ou Android)",
@@ -32,6 +36,11 @@ const MobilePricing = () => {
       "Support technique (12 mois)",
       "Panel d'administration"
     ]
+  };
+
+  const handleStartProject = (pack: 'mobile-basic' | 'mobile-pro' | 'mobile-enterprise') => {
+    setSelectedPack(pack);
+    setShowForm(true);
   };
 
   return (
@@ -64,7 +73,10 @@ const MobilePricing = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full bg-pink text-white py-3 rounded-lg hover:bg-pink/90 transition-colors duration-300 font-semibold">
+                <button 
+                  onClick={() => handleStartProject('mobile-basic')}
+                  className="w-full bg-pink text-white py-3 rounded-lg hover:bg-pink/90 transition-colors duration-300 font-semibold"
+                >
                   Commencer
                 </button>
               </motion.div>
@@ -92,7 +104,10 @@ const MobilePricing = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full bg-pink text-white py-3 rounded-lg hover:bg-pink/90 transition-colors duration-300 font-semibold">
+                <button 
+                  onClick={() => handleStartProject('mobile-pro')}
+                  className="w-full bg-pink text-white py-3 rounded-lg hover:bg-pink/90 transition-colors duration-300 font-semibold"
+                >
                   Commencer
                 </button>
               </motion.div>
@@ -120,7 +135,10 @@ const MobilePricing = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full bg-gradient-to-r from-pink to-purple-600 text-white py-3 rounded-lg hover:opacity-90 transition-colors duration-300 font-semibold">
+                <button 
+                  onClick={() => handleStartProject('mobile-enterprise')}
+                  className="w-full bg-gradient-to-r from-pink to-purple-600 text-white py-3 rounded-lg hover:opacity-90 transition-colors duration-300 font-semibold"
+                >
                   Nous contacter
                 </button>
               </motion.div>
@@ -128,6 +146,18 @@ const MobilePricing = () => {
           </Section>
         </div>
       </div>
+
+      <AnimatePresence>
+        {showForm && selectedPack && (
+          <ProjectForm
+            projectType={selectedPack}
+            onClose={() => {
+              setShowForm(false);
+              setSelectedPack(null);
+            }}
+          />
+        )}
+      </AnimatePresence>
     </Layout>
   );
 };

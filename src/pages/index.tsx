@@ -36,60 +36,109 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 2. About Section - Présentation de l'entreprise */}
-      <Section id="about" title="À Propos" variant="light" className="relative">
-        <ParticlesBackground />
-        <div className="relative z-20 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-2xl text-text-light font-light mb-12 text-center">
-              Fondée à Toulouse, Tolarys est née de la passion pour l'innovation et 
-              l'excellence technique. Notre mission est de transformer vos idées en 
-              solutions digitales performantes.
+      {/* 5. Pricing Section - Tarifs clairs */}
+      <Section id="pricing" title="Tarifs Transparents" variant="dark" className="relative">
+        <div className="absolute inset-0 bg-background-light shadow-lg"></div>
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Des tarifs adaptés à vos besoins</h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+              Des solutions sur mesure pour donner vie à vos projets digitaux, avec un accompagnement personnalisé
             </p>
-            <div className="grid md:grid-cols-2 gap-12 items-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
-              <div className="space-y-6">
-                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <p className="text-lg leading-relaxed text-text-light">
-                    <span className="text-pink font-bold text-xl">👋 </span>
-                    Salut ! Je suis Mattias, un passionné de développement depuis tout petit. 
-                    À 11 ans, j'ai créé mon premier jeu sur Scratch, et depuis, je n'ai jamais 
-                    cessé d'apprendre et de coder.
-                  </p>
+          </div>
+
+          {/* Promotion Banner */}
+          <div className="bg-pink/10 backdrop-blur-sm rounded-xl p-4 mb-8 text-center">
+            <p className="text-lg md:text-xl font-bold text-pink">
+              -20% sur votre première commande ! 
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Web Development */}
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+              <div className="mb-8">
+                <h4 className="text-pink font-semibold mb-2">Les Tarifs</h4>
+                <h3 className="text-2xl font-bold text-text-primary mb-4">Développement Web</h3>
+                <p className="text-text-secondary mb-6">Sites vitrines, e-commerce, applications web sur mesure</p>
+                <div className="text-3xl font-bold text-pink mb-6">
+                  À partir de 999€
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <p className="text-lg leading-relaxed text-text-light">
-                    <span className="text-pink font-bold text-xl">🏰 </span>
-                    C'est à Toulouse, ville d'innovation et de technologie, que j'ai choisi 
-                    de lancer Tolarys. Inspiré par l'esprit pionnier de la ville rose, 
-                    je gère cette micro-entreprise de développement web et mobile en parallèle 
-                    de mes études.
-                  </p>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <p className="text-lg leading-relaxed text-text-light">
-                    <span className="text-pink font-bold text-xl">🎯 </span>
-                    Mon objectif ? Aider les entrepreneurs et entreprises toulousaines à se 
-                    digitaliser avec des solutions modernes, efficaces et adaptées à leurs besoins. 
-                    Comme le cassoulet mijote doucement pour développer ses saveurs, nous prenons 
-                    le temps de construire des projets solides et durables.
-                  </p>
-                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-text-secondary">
+                    <span className="text-pink mr-2">✓</span>
+                    Design personnalisé
+                  </li>
+                  <li className="flex items-center text-text-secondary">
+                    <span className="text-pink mr-2">✓</span>
+                    Responsive design
+                  </li>
+                  <li className="flex items-center text-text-secondary">
+                    <span className="text-pink mr-2">✓</span>
+                    Optimisation SEO
+                  </li>
+                  <li className="flex items-center text-text-secondary">
+                    <span className="text-pink mr-2">✓</span>
+                    Formation incluse
+                  </li>
+                </ul>
               </div>
-              <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 group">
-                <Image 
-                  src="/images/toulouse-tech.jpg" 
-                  alt="Tech à Toulouse" 
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-bold text-text-light mb-2">Toulouse, Cité de l'Innovation</h3>
-                  <p className="text-text-light/90">Au cœur de la ville rose, nous créons l'avenir du numérique</p>
+              <div className="mt-auto">
+                <a
+                  href="/tarifs/web"
+                  className="block w-full text-center bg-pink text-text-light py-3 rounded-lg hover:bg-pink-dark transition-colors duration-300"
+                >
+                  Voir les détails
+                </a>
+              </div>
+            </div>
+
+            {/* Mobile Development */}
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+              <div className="mb-8">
+                <h4 className="text-pink font-semibold mb-2">Les Tarifs</h4>
+                <h3 className="text-2xl font-bold text-text-primary mb-4">Développement Mobile</h3>
+                <p className="text-text-secondary mb-6">Applications iOS et Android, solutions cross-platform</p>
+                <div className="text-3xl font-bold text-pink mb-6">
+                  À partir de 4999€
                 </div>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-text-secondary">
+                    <span className="text-pink mr-2">✓</span>
+                    iOS et Android
+                  </li>
+                  <li className="flex items-center text-text-secondary">
+                    <span className="text-pink mr-2">✓</span>
+                    Design natif
+                  </li>
+                  <li className="flex items-center text-text-secondary">
+                    <span className="text-pink mr-2">✓</span>
+                    Publication stores
+                  </li>
+                  <li className="flex items-center text-text-secondary">
+                    <span className="text-pink mr-2">✓</span>
+                    Support 6 mois
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-auto">
+                <a
+                  href="/tarifs/mobile"
+                  className="block w-full text-center bg-pink text-text-light py-3 rounded-lg hover:bg-pink-dark transition-colors duration-300"
+                >
+                  Voir les détails
+                </a>
               </div>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* 4. Technologies Section - Nos outils */}
+      <Section id="technologies" title="Technologies Utilisées" variant="light" className="relative">
+        <ParticlesBackground />
+        <div className="relative z-20">
+          <TechScroll />
         </div>
       </Section>
 
@@ -103,6 +152,7 @@ export default function Home() {
               description="Des sites web aussi accueillants que les Toulousains"
               icon="🌐"
               price="À partir de 999€"
+              href="/tarifs/web"
               features={[
                 {
                   name: "Design Personnalisé",
@@ -129,6 +179,7 @@ export default function Home() {
               description="Des apps qui décollent comme un Airbus"
               icon="📱"
               price="À partir de 4999€"
+              href="/tarifs/mobile"
               features={[
                 {
                   name: "iOS & Android",
@@ -153,6 +204,7 @@ export default function Home() {
               title="Conseil & Support"
               description="Un accompagnement à la toulousaine"
               icon="💡"
+              href="/#contact"
               features={[
                 {
                   name: "Audit Technique",
@@ -176,83 +228,59 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 4. Technologies Section - Nos outils */}
-      <Section id="technologies" title="Technologies Utilisées" variant="light" className="relative">
+
+      {/* 5 . About Section - Présentation de l'entreprise */}
+      <Section id="about" title="À Propos" variant="light" className="relative">
         <ParticlesBackground />
-        <div className="relative z-20">
-          <TechScroll />
-        </div>
-      </Section>
-
-      {/* 5. Pricing Section - Tarifs clairs */}
-      <Section id="pricing" title="Nos Tarifs" variant="dark" className="relative">
-        <div className="absolute inset-0 bg-background-light shadow-lg"></div>
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Web Development */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-              <h3 className="text-2xl font-bold text-text-primary mb-4">Développement Web</h3>
-              <p className="text-text-secondary mb-6">Sites vitrines, e-commerce, applications web sur mesure</p>
-              <div className="text-3xl font-bold text-pink mb-6">
-                À partir de 999€
+        <div className="relative z-20 container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-2xl text-text-light font-light mb-12 text-center">
+              Fondée à Toulouse, Tolarys est née de la passion pour l'innovation et 
+              l'excellence technique. Notre mission est de transformer vos idées en 
+              solutions digitales performantes.
+            </p>
+            <div className="grid md:grid-cols-2 gap-12 items-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+              <div className="space-y-6">
+                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
+                  <p className="text-lg leading-relaxed text-text-light">
+                    <span className="text-pink font-bold text-xl"> </span>
+                    Salut ! Je suis Mattias, un passionné de développement depuis tout petit. 
+                    À 11 ans, j'ai créé mon premier jeu sur Scratch, et depuis, je n'ai jamais 
+                    cessé d'apprendre et de coder.
+                  </p>
+                </div>
+                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
+                  <p className="text-lg leading-relaxed text-text-light">
+                    <span className="text-pink font-bold text-xl"> </span>
+                    C'est à Toulouse, ville d'innovation et de technologie, que j'ai choisi 
+                    de lancer Tolarys. Inspiré par l'esprit pionnier de la ville rose, 
+                    je gère cette micro-entreprise de développement web et mobile en parallèle 
+                    de mes études.
+                  </p>
+                </div>
+                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
+                  <p className="text-lg leading-relaxed text-text-light">
+                    <span className="text-pink font-bold text-xl"> </span>
+                    Mon objectif ? Aider les entrepreneurs et entreprises toulousaines à se 
+                    digitaliser avec des solutions modernes, efficaces et adaptées à leurs besoins. 
+                    Comme le cassoulet mijote doucement pour développer ses saveurs, nous prenons 
+                    le temps de construire des projets solides et durables.
+                  </p>
+                </div>
               </div>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-center text-text-secondary">
-                  <span className="text-pink mr-2">✓</span>
-                  Design personnalisé
-                </li>
-                <li className="flex items-center text-text-secondary">
-                  <span className="text-pink mr-2">✓</span>
-                  Responsive design
-                </li>
-                <li className="flex items-center text-text-secondary">
-                  <span className="text-pink mr-2">✓</span>
-                  Optimisation SEO
-                </li>
-                <li className="flex items-center text-text-secondary">
-                  <span className="text-pink mr-2">✓</span>
-                  Formation incluse
-                </li>
-              </ul>
-              <a
-                href="/tarifs/web"
-                className="block w-full text-center bg-pink text-text-light py-3 rounded-lg hover:bg-pink-dark transition-colors duration-300"
-              >
-                Voir les détails
-              </a>
-            </div>
-
-            {/* Mobile Development */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-              <h3 className="text-2xl font-bold text-text-primary mb-4">Développement Mobile</h3>
-              <p className="text-text-secondary mb-6">Applications iOS et Android, solutions cross-platform</p>
-              <div className="text-3xl font-bold text-pink mb-6">
-                À partir de 4999€
+              <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 group">
+                <Image 
+                  src="/images/capitol.jpeg" 
+                  alt="Tech à Toulouse" 
+                  fill 
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-2xl font-bold text-text-light mb-2">Toulouse, Cité de l'Innovation</h3>
+                  <p className="text-text-light/90">Au cœur de la ville rose, nous créons l'avenir du numérique</p>
+                </div>
               </div>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-center text-text-secondary">
-                  <span className="text-pink mr-2">✓</span>
-                  iOS et Android
-                </li>
-                <li className="flex items-center text-text-secondary">
-                  <span className="text-pink mr-2">✓</span>
-                  Design natif
-                </li>
-                <li className="flex items-center text-text-secondary">
-                  <span className="text-pink mr-2">✓</span>
-                  Publication stores
-                </li>
-                <li className="flex items-center text-text-secondary">
-                  <span className="text-pink mr-2">✓</span>
-                  Support 6 mois
-                </li>
-              </ul>
-              <a
-                href="/tarifs/mobile"
-                className="block w-full text-center bg-pink text-text-light py-3 rounded-lg hover:bg-pink-dark transition-colors duration-300"
-              >
-                Voir les détails
-              </a>
             </div>
           </div>
         </div>

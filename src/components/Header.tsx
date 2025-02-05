@@ -1,43 +1,69 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const menuItems = [
-    { href: '#about', label: 'À Propos' },
-    { href: '#services', label: 'Services' },
-    { href: '#technologies', label: 'Technologies' },
-    { href: '#faq', label: 'FAQ' },
-    { href: '#contact', label: 'Contact' }
+    { href: '/', label: 'Accueil' },
+    { href: '/#services', label: 'Services' },
+    { href: '/#about', label: 'À Propos' },
+    { href: '/#contact', label: 'Contact' }
   ];
+
+  const isActive = (href: string) => {
+    if (href === '/') return router.pathname === '/';
+    if (href.startsWith('/#')) return router.pathname === '/';
+    return router.pathname === href;
+  };
+
+  const handleClick = (href: string, e: React.MouseEvent) => {
+    if (href.startsWith('/#') && router.pathname !== '/') {
+      e.preventDefault();
+      router.push(href);
+    }
+    setIsOpen(false);
+  };
 
   return (
     <header className="fixed w-full top-0 z-50 bg-background-dark/95 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
-          <a href="#" className="text-2xl font-bold text-text-light">
+          <Link href="/" className="text-2xl font-bold text-text-light hover:text-pink transition-colors">
             Tolarys
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
-                className="text-text-light hover:text-pink transition-colors"
+                onClick={(e) => handleClick(item.href, e)}
+                className={`text-text-light hover:text-pink transition-colors px-3 py-2 rounded-lg hover:bg-white/5 ${
+                  isActive(item.href) ? 'text-pink' : ''
+                }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
+            <Link
+              href="/#contact"
+              onClick={(e) => handleClick('/#contact', e)}
+              className="bg-pink text-white px-4 py-2 rounded-lg hover:bg-pink/90 transition-colors"
+            >
+              Devis gratuit
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2"
+            className="md:hidden p-2 hover:bg-white/5 rounded-lg"
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">
               <span className={`w-full h-0.5 bg-text-light transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
@@ -55,15 +81,24 @@ const Header = () => {
         >
           <nav className="py-4">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block py-3 px-4 text-text-light hover:text-pink transition-colors text-lg"
+                onClick={(e) => handleClick(item.href, e)}
+                className={`block py-3 px-4 text-text-light hover:text-pink hover:bg-white/5 transition-colors text-lg ${
+                  isActive(item.href) ? 'text-pink bg-white/5' : ''
+                }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
+            <Link
+              href="/#contact"
+              onClick={(e) => handleClick('/#contact', e)}
+              className="block mx-4 mt-4 text-center bg-pink text-white py-3 rounded-lg hover:bg-pink/90 transition-colors"
+            >
+              Devis gratuit
+            </Link>
           </nav>
         </div>
       </div>

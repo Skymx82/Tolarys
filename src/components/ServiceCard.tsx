@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 interface ServiceFeature {
   name: string;
@@ -13,6 +14,7 @@ interface ServiceCardProps {
   features: ServiceFeature[];
   price?: string;
   accent?: boolean;
+  href?: string;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ 
@@ -21,8 +23,17 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   icon, 
   features,
   price,
-  accent = false 
+  accent = false,
+  href
 }) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (href) {
+      router.push(href);
+    }
+  };
+
   return (
     <motion.div
       whileHover={{ y: -10 }}
@@ -74,6 +85,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         {/* Call to action - Now it will stick to the bottom */}
         <div className="mt-auto">
           <motion.button
+            onClick={handleClick}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className={`w-full py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold transition-colors text-sm sm:text-base ${

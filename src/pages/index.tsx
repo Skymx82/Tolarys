@@ -242,7 +242,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 shadow-xl">
               <div className="space-y-4 md:space-y-6">
                 <div className="bg-grey backdrop-blur-sm p-4 md:p-6 rounded-xl">
-                  <p className="text-base md:text-lg leading-relaxed text-text-light">
+                  <p className="text-base md:text-lg leading-relaxed text-text-black">
                     <span className="text-pink font-bold text-xl"> </span>
                     Salut ! Je suis Mattias, un passionné de développement depuis tout petit. 
                     À 11 ans, j'ai créé mon premier jeu sur Scratch, et depuis, je n'ai jamais 

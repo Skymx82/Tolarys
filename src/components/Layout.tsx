@@ -14,6 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Head>
         <title>Tolarys - Développement Web & Mobile à Toulouse</title>
         <meta name="description" content="Tolarys - Votre partenaire en développement web et mobile à Toulouse. Sites web, applications mobiles et solutions digitales sur mesure." />
+        <meta name="google-site-verification" content="HC3bLk9DOOzJGj0bHYYFVZrZhzAEKDkSJpekq3ggU68" />
       </Head>
 
       <Header />

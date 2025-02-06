@@ -217,7 +217,7 @@ const ContactForm: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-green-400 text-sm sm:text-base text-center"
+            className="text-green-600 text-sm sm:text-base text-center"
           >
             Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.
           </motion.div>
@@ -227,27 +227,27 @@ const ContactForm: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="p-4 bg-pink/20 backdrop-blur-sm rounded-lg text-text-light text-center"
+            className="p-4 bg-pink/20 backdrop-blur-sm rounded-lg text-text-dark text-center"
           >
             Une erreur est survenue. Veuillez réessayer plus tard.
           </motion.div>
         )}
       </motion.form>
 
-      <div className="space-y-6 md:space-y-8 bg-white/5 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl border border-white/10">
+      <div className="space-y-6 md:space-y-8 bg-white/5 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl border border-white/10 text-text-dark">
         <div>
-          <h3 className="text-lg font-medium text-white mb-4">Contactez-nous directement</h3>
+          <h3 className="text-lg font-medium text-dark mb-4">Contactez-nous directement</h3>
           <div className="flex flex-col space-y-4">
             <a 
               href="tel:+33679336812" 
-              className="flex items-center text-text-light hover:text-pink transition-colors"
+              className="flex items-center text-text-dark hover:text-pink transition-colors"
             >
               <span className="text-2xl mr-2">📞</span>
               <span>06 79 33 68 12</span>
             </a>
             <a 
               href="mailto:contact@tolarys.fr" 
-              className="flex items-center text-text-light hover:text-pink transition-colors"
+              className="flex items-center text-text-dark hover:text-pink transition-colors"
             >
               <span className="text-2xl mr-2">📧</span>
               <span>contact@tolarys.fr</span>
@@ -256,13 +256,13 @@ const ContactForm: React.FC = () => {
         </div>
         
         <div>
-          <h3 className="text-lg font-medium text-white mb-4">Suivez-nous</h3>
+          <h3 className="text-lg font-medium text-dark mb-4">Suivez-nous</h3>
           <div className="flex flex-col space-y-4">
             <a 
               href="https://www.linkedin.com/company/tolarys" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center text-text-light/80 hover:text-pink transition-colors"
+              className="flex items-center text-text-dark/80 hover:text-pink transition-colors"
             >
               <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -273,7 +273,7 @@ const ContactForm: React.FC = () => {
               href="https://www.facebook.com/tolarystoulouse" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center text-text-light/80 hover:text-pink transition-colors"
+              className="flex items-center text-text-dark/80 hover:text-pink transition-colors"
             >
               <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
@@ -284,7 +284,7 @@ const ContactForm: React.FC = () => {
               href="https://www.instagram.com/tolarys_toulouse" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center text-text-light/80 hover:text-pink transition-colors"
+              className="flex items-center text-text-dark/80 hover:text-pink transition-colors"
             >
               <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>

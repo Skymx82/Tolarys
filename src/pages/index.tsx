@@ -242,7 +242,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 shadow-xl">
               <div className="space-y-4 md:space-y-6">
                 <div className="bg-grey backdrop-blur-sm p-4 md:p-6 rounded-xl">
-                  <p className="text-base md:text-lg leading-relaxed text-text-black">
+                  <p className="text-base md:text-grey leading-relaxed text-text-light">
                     <span className="text-pink font-bold text-xl"> </span>
                     Salut ! Je suis Mattias, un passionné de développement depuis tout petit. 
                     À 11 ans, j'ai créé mon premier jeu sur Scratch, et depuis, je n'ai jamais 
@@ -250,7 +250,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="bg-grey backdrop-blur-sm p-4 md:p-6 rounded-xl">
-                  <p className="text-base md:text-lg leading-relaxed text-text-light">
+                  <p className="text-base md:text-grey leading-relaxed text-text-light">
                     <span className="text-pink font-bold text-xl"> </span>
                     C'est à Toulouse, ville d'innovation et de technologie, que j'ai choisi 
                     de lancer Tolarys. Inspiré par l'esprit pionnier de la ville rose, 
@@ -259,7 +259,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="bg-grey backdrop-blur-sm p-4 md:p-6 rounded-xl">
-                  <p className="text-base md:text-lg leading-relaxed text-text-light">
+                  <p className="text-base md:text-grey leading-relaxed text-text-light">
                     <span className="text-pink font-bold text-xl"> </span>
                     Mon objectif ? Aider les entrepreneurs et entreprises toulousaines à se 
                     digitaliser avec des solutions modernes, efficaces et adaptées à leurs besoins. 

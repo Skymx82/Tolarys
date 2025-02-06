@@ -78,8 +78,8 @@ const ContactForm: React.FC = () => {
     }
   };
 
-  const inputClasses = "w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 backdrop-blur-sm rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-pink border border-white/20 text-sm sm:text-base";
-  const labelClasses = "block text-sm sm:text-base font-medium text-white mb-2";
+  const inputClasses = "w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl text-dark placeholder-dark focus:outline-none focus:ring-2 focus:ring-pink border border-dark text-sm sm:text-base";
+  const labelClasses = "block text-sm sm:text-base font-medium text-dark mb-2";
 
   return (
     <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
@@ -101,7 +101,7 @@ const ContactForm: React.FC = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className={inputClasses}
+            className={`${inputClasses} bg-white text-dark`}
             placeholder="Votre nom"
             required
           />
@@ -127,7 +127,7 @@ const ContactForm: React.FC = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className={inputClasses}
+            className={`${inputClasses} bg-white text-dark`}
             placeholder="votre@email.com"
             required
           />
@@ -152,14 +152,14 @@ const ContactForm: React.FC = () => {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className={inputClasses}
+            className={`${inputClasses} bg-white text-dark`}
             required
           >
-            <option value="" className="bg-background-dark text-white">Choisissez un sujet</option>
-            <option value="site-web" className="bg-background-dark text-white">Site Web</option>
-            <option value="app-mobile" className="bg-background-dark text-white">Application Mobile</option>
-            <option value="maintenance" className="bg-background-dark text-white">Maintenance</option>
-            <option value="autre" className="bg-background-dark text-white">Autre</option>
+            <option value="" className="bg-white text-dark">Choisissez un sujet</option>
+            <option value="site-web" className="bg-white text-dark">Site Web</option>
+            <option value="app-mobile" className="bg-white text-dark">Application Mobile</option>
+            <option value="maintenance" className="bg-white text-dark">Maintenance</option>
+            <option value="autre" className="bg-white text-dark">Autre</option>
           </motion.select>
         </div>
 
@@ -174,7 +174,7 @@ const ContactForm: React.FC = () => {
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            className={inputClasses}
+            className={`${inputClasses} bg-white text-dark`}
             placeholder="Décrivez votre projet..."
             required
           />
@@ -198,7 +198,7 @@ const ContactForm: React.FC = () => {
             ${isSubmitting 
               ? 'bg-pink/50 cursor-not-allowed' 
               : 'bg-pink hover:bg-pink-dark'
-            } text-white shadow-lg`}
+            } text-white shadow-lg bg-dark`}
         >
           {isSubmitting ? (
             <span className="flex items-center justify-center">

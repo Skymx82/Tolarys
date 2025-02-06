@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 const Header = () => {
@@ -33,8 +34,18 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-text-light hover:text-pink transition-colors">
-            Tolarys
+          <Link href="/" className="flex items-center space-x-3 text-2xl font-bold text-text-light hover:text-pink transition-colors">
+            <div className="relative w-10 h-10">
+              <Image
+                src="Logo_trans.png"
+                alt="Tolarys Logo"
+                fill
+                className="object-contain"
+                priority
+                sizes="(max-width: 768px) 2.5rem, 2.5rem"
+              />
+            </div>
+            <span className="mt-0.5">Tolarys</span>
           </Link>
 
           {/* Desktop Menu */}

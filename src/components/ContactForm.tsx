@@ -78,17 +78,17 @@ const ContactForm: React.FC = () => {
     }
   };
 
-  const inputClasses = "w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 rounded-xl text-text-light placeholder-text-light/50 focus:outline-none focus:ring-2 focus:ring-pink text-sm sm:text-base";
-  const labelClasses = "block text-sm sm:text-base font-medium text-text-light mb-2";
+  const inputClasses = "w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 backdrop-blur-sm rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-pink border border-white/20 text-sm sm:text-base";
+  const labelClasses = "block text-sm sm:text-base font-medium text-white mb-2";
 
   return (
-    <div className="grid md:grid-cols-2 gap-8 items-start">
+    <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
       <motion.form
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         onSubmit={handleSubmit}
-        className="space-y-4 sm:space-y-6 bg-white/5 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl"
+        className="space-y-4 sm:space-y-6 bg-white/5 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl border border-white/10"
       >
         <div>
           <label htmlFor="name" className={labelClasses}>
@@ -155,11 +155,11 @@ const ContactForm: React.FC = () => {
             className={inputClasses}
             required
           >
-            <option value="">Choisissez un sujet</option>
-            <option value="site-web" className="bg-background-dark">Site Web</option>
-            <option value="app-mobile" className="bg-background-dark">Application Mobile</option>
-            <option value="maintenance" className="bg-background-dark">Maintenance</option>
-            <option value="autre" className="bg-background-dark">Autre</option>
+            <option value="" className="bg-background-dark text-white">Choisissez un sujet</option>
+            <option value="site-web" className="bg-background-dark text-white">Site Web</option>
+            <option value="app-mobile" className="bg-background-dark text-white">Application Mobile</option>
+            <option value="maintenance" className="bg-background-dark text-white">Maintenance</option>
+            <option value="autre" className="bg-background-dark text-white">Autre</option>
           </motion.select>
         </div>
 
@@ -198,7 +198,7 @@ const ContactForm: React.FC = () => {
             ${isSubmitting 
               ? 'bg-pink/50 cursor-not-allowed' 
               : 'bg-pink hover:bg-pink-dark'
-            } text-white`}
+            } text-white shadow-lg`}
         >
           {isSubmitting ? (
             <span className="flex items-center justify-center">
@@ -234,9 +234,9 @@ const ContactForm: React.FC = () => {
         )}
       </motion.form>
 
-      <div className="space-y-8">
+      <div className="space-y-6 md:space-y-8 bg-white/5 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl border border-white/10">
         <div>
-          <h3 className="text-lg font-medium text-text-light mb-4">Contactez-nous directement</h3>
+          <h3 className="text-lg font-medium text-white mb-4">Contactez-nous directement</h3>
           <div className="flex flex-col space-y-4">
             <a 
               href="tel:+33679336812" 
@@ -256,7 +256,7 @@ const ContactForm: React.FC = () => {
         </div>
         
         <div>
-          <h3 className="text-lg font-medium text-text-light mb-4">Suivez-nous</h3>
+          <h3 className="text-lg font-medium text-white mb-4">Suivez-nous</h3>
           <div className="flex flex-col space-y-4">
             <a 
               href="https://www.linkedin.com/company/tolarys" 

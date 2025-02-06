@@ -239,18 +239,18 @@ export default function Home() {
               l'excellence technique. Notre mission est de transformer vos idées en 
               solutions digitales performantes.
             </p>
-            <div className="grid md:grid-cols-2 gap-12 items-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
-              <div className="space-y-6">
-                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <p className="text-lg leading-relaxed text-text-light">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 shadow-xl">
+              <div className="space-y-4 md:space-y-6">
+                <div className="bg-white/20 backdrop-blur-sm p-4 md:p-6 rounded-xl">
+                  <p className="text-base md:text-lg leading-relaxed text-text-light">
                     <span className="text-pink font-bold text-xl"> </span>
                     Salut ! Je suis Mattias, un passionné de développement depuis tout petit. 
                     À 11 ans, j'ai créé mon premier jeu sur Scratch, et depuis, je n'ai jamais 
                     cessé d'apprendre et de coder.
                   </p>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <p className="text-lg leading-relaxed text-text-light">
+                <div className="bg-white/20 backdrop-blur-sm p-4 md:p-6 rounded-xl">
+                  <p className="text-base md:text-lg leading-relaxed text-text-light">
                     <span className="text-pink font-bold text-xl"> </span>
                     C'est à Toulouse, ville d'innovation et de technologie, que j'ai choisi 
                     de lancer Tolarys. Inspiré par l'esprit pionnier de la ville rose, 
@@ -258,8 +258,8 @@ export default function Home() {
                     de mes études.
                   </p>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <p className="text-lg leading-relaxed text-text-light">
+                <div className="bg-white/20 backdrop-blur-sm p-4 md:p-6 rounded-xl">
+                  <p className="text-base md:text-lg leading-relaxed text-text-light">
                     <span className="text-pink font-bold text-xl"> </span>
                     Mon objectif ? Aider les entrepreneurs et entreprises toulousaines à se 
                     digitaliser avec des solutions modernes, efficaces et adaptées à leurs besoins. 
@@ -268,7 +268,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 group">
+              <div className="relative h-[300px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 group">
                 <Image 
                   src="/images/capitol.jpeg" 
                   alt="Tech à Toulouse" 

@@ -52,8 +52,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="space-y-4">
               <h3 className="text-xl font-bold">Légal</h3>
               <ul className="space-y-2">
-                <li><Link href="/mentions-legales" className="hover:text-pink transition-colors">Mentions légales</Link></li>
-                <li><Link href="/politique-confidentialite" className="hover:text-pink transition-colors">Politique de confidentialité</Link></li>
+                <li><Link href="/legal/cgv" className="hover:text-pink transition-colors">CGV</Link></li>
+                <li><Link href="/legal/politique-confidentialite" className="hover:text-pink transition-colors">Politique de confidentialité</Link></li>
+                <li><Link href="/legal/mentions-legales" className="hover:text-pink transition-colors">Mentions légales</Link></li>
+                <li><Link href="/legal/politique-cookies" className="hover:text-pink transition-colors">Politique de cookies</Link></li>
               </ul>
             </div>
           </div>

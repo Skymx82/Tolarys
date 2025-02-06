@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         openGraph={{
           type: 'website',
           locale: 'fr_FR',
-          url: 'https://www.tolarys.fr/',
+          url: 'https://www.tolarys-toulouse.fr/',
           siteName: 'Tolarys',
         }}
       />

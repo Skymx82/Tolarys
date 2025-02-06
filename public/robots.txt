@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://tolarys.fr
+Host: https://www.tolarys-toulouse.fr
 
 # Sitemaps
-Sitemap: https://tolarys.fr/sitemap.xml
+Sitemap: https://www.tolarys-toulouse.fr/sitemap.xml

@@ -32,7 +32,7 @@ const JsonLd = () => {
       },
       geoRadius: '50000',
     },
-    priceRange: '€€€',
+    priceRange: '€',
     paymentAccepted: 'Cash, Credit Card, Virement bancaire',
     currenciesAccepted: 'EUR',
     openingHours: 'Mo-Fr 09:00-18:00',

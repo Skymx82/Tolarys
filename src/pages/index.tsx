@@ -241,7 +241,7 @@ export default function Home() {
             </p>
             <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 shadow-xl">
               <div className="space-y-4 md:space-y-6">
-                <div className="bg-white/20 backdrop-blur-sm p-4 md:p-6 rounded-xl">
+                <div className="bg-grey backdrop-blur-sm p-4 md:p-6 rounded-xl">
                   <p className="text-base md:text-lg leading-relaxed text-text-light">
                     <span className="text-pink font-bold text-xl"> </span>
                     Salut ! Je suis Mattias, un passionné de développement depuis tout petit. 
@@ -249,7 +249,7 @@ export default function Home() {
                     cessé d'apprendre et de coder.
                   </p>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm p-4 md:p-6 rounded-xl">
+                <div className="bg-grey backdrop-blur-sm p-4 md:p-6 rounded-xl">
                   <p className="text-base md:text-lg leading-relaxed text-text-light">
                     <span className="text-pink font-bold text-xl"> </span>
                     C'est à Toulouse, ville d'innovation et de technologie, que j'ai choisi 
@@ -258,7 +258,7 @@ export default function Home() {
                     de mes études.
                   </p>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm p-4 md:p-6 rounded-xl">
+                <div className="bg-grey backdrop-blur-sm p-4 md:p-6 rounded-xl">
                   <p className="text-base md:text-lg leading-relaxed text-text-light">
                     <span className="text-pink font-bold text-xl"> </span>
                     Mon objectif ? Aider les entrepreneurs et entreprises toulousaines à se 

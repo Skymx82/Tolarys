@@ -13,12 +13,14 @@ const Section = ({ id, title, children, className = '', variant = 'dark' }: Sect
   
   return (
     <section id={id} className={`py-16 ${bgColor} ${className}`}>
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-text-light text-center">
-          {title}
-        </h2>
-        {children}
-      </div>
+      {title && (
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-text-light text-center">
+            {title}
+          </h2>
+        </div>
+      )}
+      {children}
     </section>
   );
 };

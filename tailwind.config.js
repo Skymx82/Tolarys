@@ -1,6 +1,5 @@
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -30,6 +29,10 @@ const config: Config = {
           accent: '#F8F9FA',
         }
       },
+      animation: {
+        'fade-in': 'fade-in 1s ease-out',
+        'scroll': 'scroll 30s linear infinite',
+      },
       keyframes: {
         'fade-in': {
           '0%': { opacity: '0' },
@@ -40,13 +43,7 @@ const config: Config = {
           '100%': { transform: 'translateX(-50%)' },
         }
       },
-      animation: {
-        'fade-in': 'fade-in 1s ease-out',
-        'scroll': 'scroll 30s linear infinite',
-      },
     },
   },
   plugins: [],
 }
-
-export default config

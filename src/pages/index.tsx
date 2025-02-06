@@ -6,7 +6,6 @@ import TechScroll from "../components/TechScroll";
 import FaqAccordion from "../components/FaqAccordion";
 import ContactForm from "../components/ContactForm";
 import ServiceCard from "../components/ServiceCard";
-import Link from 'next/link';
 
 export default function Home() {
   return (

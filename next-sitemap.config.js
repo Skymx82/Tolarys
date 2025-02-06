@@ -1,9 +1,12 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.tolarys-toulouse.fr',
-  generateRobotsTxt: false, // On a déjà créé notre robots.txt
-  changefreq: 'weekly',
-  priority: 0.7,
+  siteUrl: 'https://tolarys.fr',
+  generateRobotsTxt: true,
   sitemapSize: 7000,
   exclude: ['/404'],
+  robotsTxtOptions: {
+    additionalSitemaps: [
+      'https://tolarys.fr/sitemap.xml',
+    ],
+  },
 }

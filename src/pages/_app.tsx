@@ -1,15 +1,25 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
-import seoConfig from '../../next-seo.config';
 import JsonLd from '../components/JsonLd';
 
-export default function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <DefaultSeo {...seoConfig} />
+      <DefaultSeo
+        title="Tolarys - Développement Web & Mobile à Toulouse"
+        description="Agence de développement web et mobile à Toulouse. Création de sites web, applications mobiles et solutions digitales sur mesure."
+        openGraph={{
+          type: 'website',
+          locale: 'fr_FR',
+          url: 'https://www.tolarys.fr/',
+          siteName: 'Tolarys',
+        }}
+      />
       <JsonLd />
       <Component {...pageProps} />
     </>
   );
 }
+
+export default MyApp;

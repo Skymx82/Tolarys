@@ -53,7 +53,7 @@ const technologies: Technology[] = [
 const TechScroll: React.FC = () => {
   return (
     <div className="w-full overflow-hidden py-12">
-      <div className="flex space-x-8 animate-scroll">
+      <div className="flex space-x-8 animate-scroll sm:animate-faster">
         {[...technologies, ...technologies].map((tech, index) => (
           <div
             key={`${tech.name}-${index}`}

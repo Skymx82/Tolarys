@@ -32,6 +32,8 @@ module.exports = {
       animation: {
         'fade-in': 'fade-in 1s ease-out',
         'scroll': 'scroll 30s linear infinite',
+        'scroll-faster': 'scroll 15s linear infinite',
+        'scroll-fasted': 'scroll 10s linear infinite',
       },
       keyframes: {
         'fade-in': {

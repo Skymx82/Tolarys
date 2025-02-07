@@ -57,7 +57,7 @@ const TechScroll: React.FC = () => {
         {[...technologies, ...technologies].map((tech, index) => (
           <div
             key={`${tech.name}-${index}`}
-            className="flex-none w-64 bg-white/10 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 group"
+            className="flex-none w-64 bg-white/10 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 group md:duration-200 sm:duration-100"
           >
             <div className="h-32 w-32 mx-auto mb-4 bg-white/5 rounded-lg flex items-center justify-center relative">
               {tech.logo ? (

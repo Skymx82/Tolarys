@@ -52,44 +52,59 @@ const technologies: Technology[] = [
 
 const TechScroll: React.FC = () => {
   const [scrollSpeed, setScrollSpeed] = useState("animate-scroll-medium");
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const updateSpeed = () => {
       if (window.innerWidth <= 640) {
-        setScrollSpeed("animate-scroll-faster"); // Mobile : plus rapide
+        setScrollSpeed("animate-scroll-fast");
       } else {
-        setScrollSpeed("animate-scroll-medium"); // Desktop : vitesse normale
+        setScrollSpeed("animate-scroll-medium");
       }
     };
 
-    updateSpeed(); // Définir dès le chargement
-    window.addEventListener("resize", updateSpeed); // Mettre à jour au resize
-
+    updateSpeed();
+    window.addEventListener("resize", updateSpeed);
     return () => window.removeEventListener("resize", updateSpeed);
   }, []);
 
   return (
-    <div className="w-full overflow-hidden py-12">
-      <div className={`flex space-x-8 ${scrollSpeed}`}>
+    <div className="w-full overflow-hidden py-8 sm:py-12 bg-gradient-to-r from-background-dark/50 to-background-dark">
+      <div 
+        className={`flex space-x-4 sm:space-x-6 ${scrollSpeed} ${isHovered ? 'pause-animation' : ''}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {[...technologies, ...technologies].map((tech, index) => (
           <div
             key={`${tech.name}-${index}`}
-            className="flex-none w-64 bg-white/10 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 group "
+            className="flex-none w-40 sm:w-56 md:w-64 bg-white/5 hover:bg-white/10 backdrop-blur-md rounded-xl p-4 sm:p-6 
+                     transform hover:scale-105 transition-all duration-300 group animate-float 
+                     border border-white/10 hover:border-white/20 shadow-lg hover:shadow-xl"
           >
-            <div className="h-32 w-32 mx-auto mb-4 bg-white/5 rounded-lg flex items-center justify-center relative">
+            <div className="h-24 sm:h-32 w-24 sm:w-32 mx-auto mb-4 rounded-xl flex items-center justify-center relative group-hover:animate-float">
               {tech.logo ? (
                 <Image
                   src={tech.logo}
                   alt={`${tech.name} logo`}
                   fill
-                  className="object-contain p-4 group-hover:opacity-100 transition-opacity duration-300"
+                  className="object-contain p-3 sm:p-4 group-hover:opacity-100 transition-all duration-300 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:drop-shadow-[0_0_20px_rgba(255,20,147,0.3)]"
                 />
               ) : (
-                <span className="text-4xl text-text-light/80">{tech.name[0]}</span>
+                <span className="text-3xl sm:text-4xl text-pink-light/80 group-hover:text-pink-light transition-all duration-300">
+                  {tech.name[0]}
+                </span>
               )}
             </div>
-            <h3 className="text-xl font-semibold text-text-light text-center mb-2">{tech.name}</h3>
-            <p className="text-text-light/80 text-center text-sm">{tech.description}</p>
+            <h3 className="text-lg sm:text-xl font-bold text-center mb-2 
+                         bg-gradient-to-r from-text-light to-pink-light bg-clip-text text-transparent 
+                         group-hover:from-pink-light group-hover:to-text-light transition-all duration-300">
+              {tech.name}
+            </h3>
+            <p className="text-xs sm:text-sm text-center text-text-light/70 group-hover:text-text-light/90 
+                        transition-colors line-clamp-2 leading-relaxed">
+              {tech.description}
+            </p>
           </div>
         ))}
       </div>

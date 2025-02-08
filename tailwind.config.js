@@ -31,9 +31,11 @@ module.exports = {
       },
       animation: {
         'fade-in': 'fade-in 1s ease-out',
+        'scroll-slow': 'scroll 40s linear infinite',
         'scroll-medium': 'scroll 30s linear infinite',
-        'scroll-faster': 'scroll 10s linear infinite',
-        'scroll-fasted': 'scroll 10s linear infinite',
+        'scroll-fast': 'scroll 20s linear infinite',
+        'float': 'float 3s ease-in-out infinite',
+        'pulse-soft': 'pulse-soft 2s ease-in-out infinite'
       },
       keyframes: {
         'fade-in': {
@@ -42,7 +44,15 @@ module.exports = {
         },
         'scroll': {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(-50%)' }
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' }
+        },
+        'pulse-soft': {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.8 }
         }
       },
     },

@@ -9,7 +9,7 @@ const JsonLd = () => {
     description: '🏆 Agence N°1 en développement web et mobile à Toulouse. Création de sites web premium et d\'applications mobiles innovantes. Plus de 500 projets réussis.',
     url: 'https://www.tolarys-toulouse.fr',
     telephone: '+33XXXXXXXXX', // Remplacez par votre numéro
-    email: 'contact@tolarys-toulouse.fr',
+    email: 'tolarystoulouse@gmail.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '', // Ajoutez votre adresse

@@ -15,7 +15,7 @@ export default function MentionsLegales() {
               <li>Micro-entreprise</li>
               <li>Siège social : 4 Avenue de Toulouse, 31270 Cugnaux </li>
               <li>SIRET : En cour d'immatriculation</li>
-              <li>Email : contact@tolarys-toulouse.fr</li>
+              <li>Email : tolarystoulouse@gmail.com</li>
               <li>Directeur de la publication : Mattias Mathevon</li>
             </ul>
           </section>

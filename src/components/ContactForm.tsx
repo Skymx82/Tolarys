@@ -246,11 +246,11 @@ const ContactForm: React.FC = () => {
               <span>06 79 33 68 12</span>
             </a>
             <a 
-              href="mailto:contact@tolarys.fr" 
+              href="mailto:tolarystoulouse@gmail.com" 
               className="flex items-center text-text-dark hover:text-pink transition-colors"
             >
               <span className="text-2xl mr-2">📧</span>
-              <span>contact@tolarys.fr</span>
+              <span>tolarystoulouse@gmail.com</span>
             </a>
           </div>
         </div>

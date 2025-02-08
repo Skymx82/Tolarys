@@ -15,6 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <title>Tolarys - Développement Web & Mobile à Toulouse</title>
         <meta name="description" content="Tolarys - Votre partenaire en développement web et mobile à Toulouse. Sites web, applications mobiles et solutions digitales sur mesure." />
         <meta name="google-site-verification" content="HC3bLk9DOOzJGj0bHYYFVZrZhzAEKDkSJpekq3ggU68" />
+        <link rel="icon" href="/Logo.png" />
       </Head>
 
       <Header />
@@ -46,7 +47,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <h3 className="text-xl font-bold">Contact</h3>
               <ul className="space-y-2">
                 <li>Toulouse, France</li>
-                <li><a href="mailto:contact@tolarys.fr" className="hover:text-pink transition-colors">contact@tolarys.fr</a></li>
+                <li><a href="mailto:tolarystoulouse@gmail.com" className="hover:text-pink transition-colors">tolarystoulouse@gmail.com</a></li>
               </ul>
             </div>
             

@@ -43,7 +43,7 @@ export default function PolitiqueConfidentialite() {
             <h2 className="text-2xl font-semibold mb-4 text-white">5. Contact</h2>
             <p>Pour exercer vos droits ou pour toute question sur le traitement de vos données dans ce dispositif, vous pouvez nous contacter :</p>
             <ul className="list-disc ml-6 mt-2 space-y-2">
-              <li>Par email : contact@tolarys-toulouse.fr</li>
+              <li>Par email : tolarystoulouse@gmail.com</li>
               <li>Par courrier : 4 Avenue de Toulouse, 31270 Cugnaux</li>
             </ul>
           </section>

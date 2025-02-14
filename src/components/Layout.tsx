@@ -16,6 +16,20 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <meta name="description" content="Tolarys - Votre partenaire en développement web et mobile à Toulouse. Sites web, applications mobiles et solutions digitales sur mesure." />
         <meta name="google-site-verification" content="HC3bLk9DOOzJGj0bHYYFVZrZhzAEKDkSJpekq3ggU68" />
         <link rel="icon" href="/Logo.png" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tolarys.fr/" />
+        <meta property="og:title" content="Tolarys - Développement Web & Mobile à Toulouse" />
+        <meta property="og:description" content="Tolarys - Votre partenaire en développement web et mobile à Toulouse. Sites web, applications mobiles et solutions digitales sur mesure." />
+        <meta property="og:image" content="https://tolarys.fr/Logo.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://tolarys.fr/" />
+        <meta property="twitter:title" content="Tolarys - Développement Web & Mobile à Toulouse" />
+        <meta property="twitter:description" content="Tolarys - Votre partenaire en développement web et mobile à Toulouse. Sites web, applications mobiles et solutions digitales sur mesure." />
+        <meta property="twitter:image" content="https://tolarys.fr/Logo.png" />
       </Head>
 
       <Header />

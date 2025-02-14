@@ -37,7 +37,7 @@ const Header = () => {
           <Link href="/" className="flex items-center space-x-3 text-2xl font-bold text-text-light hover:text-pink transition-colors">
             <div className="relative w-10 h-10">
               <Image
-                src="/Logo.png"
+                src="/Logo_trans.png"
                 alt="Tolarys Logo"
                 fill
                 className="object-contain"

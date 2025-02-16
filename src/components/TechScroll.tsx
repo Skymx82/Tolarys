@@ -80,6 +80,7 @@ const technologies: Technology[] = [
 const TechScroll: React.FC = () => {
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [currentSlide, setCurrentSlide] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const categories = [
@@ -93,6 +94,15 @@ const TechScroll: React.FC = () => {
   const filteredTech = technologies.filter(tech => 
     selectedCategory === 'all' || tech.category === selectedCategory
   );
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const scrollPosition = scrollRef.current.scrollLeft;
+      const slideWidth = scrollRef.current.offsetWidth;
+      const newSlide = Math.round(scrollPosition / slideWidth);
+      setCurrentSlide(newSlide);
+    }
+  };
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -138,33 +148,10 @@ const TechScroll: React.FC = () => {
         </div>
 
         {/* Vue mobile : Carrousel */}
-        <div className="lg:hidden relative px-8">
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
-            <button 
-              onClick={scrollLeft}
-              className="bg-white/10 hover:bg-white/20 w-8 h-8 rounded-full backdrop-blur-sm flex items-center justify-center
-                       text-text-light hover:text-pink transition-colors border border-white/20"
-              aria-label="Précédent"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-          </div>
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
-            <button 
-              onClick={scrollRight}
-              className="bg-white/10 hover:bg-white/20 w-8 h-8 rounded-full backdrop-blur-sm flex items-center justify-center
-                       text-text-light hover:text-pink transition-colors border border-white/20"
-              aria-label="Suivant"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
+        <div className="lg:hidden relative">
           <div 
             ref={scrollRef}
+            onScroll={handleScroll}
             className="flex overflow-x-auto gap-4 pb-6 snap-x snap-mandatory hide-scrollbar -mx-4 px-4"
           >
             {filteredTech.map((tech) => (
@@ -204,6 +191,30 @@ const TechScroll: React.FC = () => {
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Points de navigation */}
+          <div className="flex justify-center gap-2 mt-4">
+            {filteredTech.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (scrollRef.current) {
+                    const slideWidth = scrollRef.current.offsetWidth;
+                    scrollRef.current.scrollTo({
+                      left: slideWidth * index,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentSlide === index 
+                    ? 'bg-pink w-4' 
+                    : 'bg-white/20 hover:bg-white/40'
+                }`}
+                aria-label={`Aller à la diapositive ${index + 1}`}
+              />
             ))}
           </div>
         </div>
